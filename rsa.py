@@ -10,8 +10,8 @@ def is_prime(n):
 
 
 def find_MCD(e, fi):
-    divider_e = []
-    divider_fi = []
+    divider_e = [e/2]
+    divider_fi = [fi/2]
     for i in range(1, e):
         if(e%i) == 0:
             np.append(divider_e, i)
@@ -22,7 +22,7 @@ def find_MCD(e, fi):
         if(fi%j) == 0:
             np.append(divider_fi, j)
     
-    print (divider_fi)
+    #print (divider_fi)
     for i in range(len(divider_e)):
         for j in range(len(divider_fi)):
             if j == i and j != 1 :
@@ -34,8 +34,9 @@ def find_d(e, fi):
     k = 0
     while response is not True:
         k+=1
-        if(((k*fi +1) / e ) == 0):
+        if(((k*fi +1) % e ) == 0):
             response = True
+    return k
         
     
 result = False;
@@ -58,7 +59,9 @@ print(n);
 
 fi =  (p -1) * (q-1)
 
-e = 2
+#print(fi)
+
+e = 1
 result = find_MCD(e,fi)
 
 while result is not True:
