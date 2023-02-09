@@ -12,14 +12,14 @@ def is_prime(n):
 def find_MCD(e, fi):
     divider_e = [e/2]
     divider_fi = [fi/2]
-    for i in range(1, e):
-        if(e%i) == 0:
+    for i in range(2, e):
+        if(e%i) == 0 and i!=1:
             np.append(divider_e, i)
             print (i) 
             
     
     for j in range(1, fi):
-        if(fi%j) == 0:
+        if(fi%j) == 0 and j != 1:
             np.append(divider_fi, j)
     
     #print (divider_fi)
